@@ -107,7 +107,7 @@ function installQuestions() {
 	echo "安装过程中你可以直接按回车来使用脚本的默认值。"
 	echo ""
 	echo "我们需要知道Openvpn监听的IP地址，"
-	echo "除非你的服务器经过NAT（网络地址转换），否则它应该是你的公网IP。"
+	echo "一般情况下使用默认的即可。"
 
 	# Detect public IPv4 address and pre-fill for the user
 	IP=$(ip -4 addr | sed -ne 's|^.* inet \([^/]*\)/.* scope global.*$|\1|p' | head -1)
@@ -123,7 +123,6 @@ function installQuestions() {
 	if echo "$IP" | grep -qE '^(10\.|172\.1[6789]\.|172\.2[0-9]\.|172\.3[01]\.|192\.168)'; then
 		echo ""
 		echo "看起来你的服务器经过了NAT（网络地址转换）。请问你的公网IP是什么？"
-		echo "我们需要它来让客户端连接服务器。"
 		until [[ $ENDPOINT != "" ]]; do
 			read -rp "公网IP或域名: " -e ENDPOINT
 		done
