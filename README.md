@@ -9,7 +9,7 @@
 第一步，下载脚本：
 
 ```bash
-curl -O https://github.com/Nouko61/openvpn-install/raw/master/openvpn-install.sh
+wget https://github.com/Nouko61/openvpn-install/raw/master/openvpn-install.sh
 chmod +x openvpn-install.sh
 ```
 
