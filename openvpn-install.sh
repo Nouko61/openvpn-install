@@ -578,7 +578,7 @@ group $NOGROUP
 persist-key
 persist-tun
 keepalive 10 120
-server 10.233.0.0 255.255.0.0
+server 10.233.0.0 255.255.255.0
 ifconfig-pool-persist ipp.txt" >>/etc/openvpn/server.conf
 
 	if [[ $COMPRESSION_ENABLED == "y" ]]; then
